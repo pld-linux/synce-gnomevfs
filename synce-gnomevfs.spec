@@ -47,6 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/synce-in-computer-folder
 %attr(755,root,root) %{_libdir}/gnome-vfs-2.0/modules/libsyncevfs.so
 %{_sysconfdir}/gnome-vfs-2.0/modules/synce-module.conf
-%dir %{_pixmapsdir}/synce
 %{_pixmapsdir}/synce/synce-color.png
 %{_datadir}/synce/synce-in-computer-folder.sh
