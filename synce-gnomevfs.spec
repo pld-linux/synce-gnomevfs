@@ -1,4 +1,4 @@
-Summary:	GnomeVFS module for accessing Windows CE and Pocket PC Devices.
+Summary:	GnomeVFS module for accessing Windows CE and Pocket PC Devices
 Name:		synce-gnomevfs
 Version:	0.9.0
 Release:	0.2
