@@ -9,9 +9,11 @@ Group:		Applications/Communications
 Source0: 	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
 # Source0-md5:	1fa8d653297331479edcd5d983a0f75e
 URL:		http://synce.sourceforge.net/
-BuildRequires:	synce-devel = %{version}
-Requires:	synce
-# XXX: gnomevfs deps missing
+BuildRequires:	automake
+BuildRequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	pkgconfig
+BuildRequires:	synce-librapi2-devel >= 0.9.0
+Requires:	synce-librapi2 >= 0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,7 +30,9 @@ http://synce.sourceforge.net/ .
 %setup -q 
 
 %build
-%configure
+cp -f /usr/share/automake/config.* .
+%configure \
+	--disable-static
 %{__make}
 
 %install
@@ -44,8 +48,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog LICENSE README
 %attr(755,root,root) %{_bindir}/synce-in-computer-folder
 %attr(755,root,root) %{_libdir}/gnome-vfs-2.0/modules/libsyncevfs.so
 %{_sysconfdir}/gnome-vfs-2.0/modules/synce-module.conf
-%{_pixmapsdir}/synce/synce-color.png
+# dir shared with synce-rra, synce-software-manager, synce-trayicon
+%dir %{_datadir}/synce
 %{_datadir}/synce/synce-in-computer-folder.sh
+# dir shared with synce-trayicon
+%dir %{_pixmapsdir}/synce
+%{_pixmapsdir}/synce/synce-color.png
