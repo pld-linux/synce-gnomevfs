@@ -20,12 +20,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 SynCE-GnomeVFS is a GnomeVFS module for accessing Windows CE and
 Pocket PC devices. It is part of the SynCE project:
-http://synce.sourceforge.net/ .
+<http://synce.sourceforge.net/>.
 
 %description -l pl
 SynCE-GnomeVFS to modu³ GnomeVFS s³u¿±cy do dostêpu do urz±dzeñ
 Windows CE i Pocket PC. Jest on czê¶ci± projektu SynCE:
-http://synce.sourceforge.net/ .
+<http://synce.sourceforge.net/>.
 
 %prep
 %setup -q 
