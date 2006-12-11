@@ -8,7 +8,7 @@ Vendor:		The SynCE Project
 Group:		Applications/Communications
 Source0: 	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
 # Source0-md5:	1fa8d653297331479edcd5d983a0f75e
-URL:		http://synce.sourceforge.net/
+URL:		http://www.synce.org/
 BuildRequires:	automake
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	pkgconfig
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 SynCE-GnomeVFS is a GnomeVFS module for accessing Windows CE and
 Pocket PC devices. It is part of the SynCE project:
-<http://synce.sourceforge.net/>.
+<http://www.synce.org/>.
 
 %description -l pl
 SynCE-GnomeVFS to modu³ GnomeVFS s³u¿±cy do dostêpu do urz±dzeñ
 Windows CE i Pocket PC. Jest on czê¶ci± projektu SynCE:
-<http://synce.sourceforge.net/>.
+<http://www.synce.org/>.
 
 %prep
 %setup -q 
