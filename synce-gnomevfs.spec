@@ -1,5 +1,5 @@
 Summary:	GnomeVFS module for accessing Windows CE and Pocket PC devices
-Summary(pl):	Modu³ GnomeVFS s³u¿±cy do dostêpu do urz±dzeñ Windows CE i Pocket PC
+Summary(pl.UTF-8):   ModuÅ‚ GnomeVFS sÅ‚uÅ¼Ä…cy do dostÄ™pu do urzÄ…dzeÅ„ Windows CE i Pocket PC
 Name:		synce-gnomevfs
 Version:	0.9.0
 Release:	2
@@ -23,9 +23,9 @@ SynCE-GnomeVFS is a GnomeVFS module for accessing Windows CE and
 Pocket PC devices. It is part of the SynCE project:
 <http://www.synce.org/>.
 
-%description -l pl
-SynCE-GnomeVFS to modu³ GnomeVFS s³u¿±cy do dostêpu do urz±dzeñ
-Windows CE i Pocket PC. Jest on czê¶ci± projektu SynCE:
+%description -l pl.UTF-8
+SynCE-GnomeVFS to moduÅ‚ GnomeVFS sÅ‚uÅ¼Ä…cy do dostÄ™pu do urzÄ…dzeÅ„
+Windows CE i Pocket PC. Jest on czÄ™Å›ciÄ… projektu SynCE:
 <http://www.synce.org/>.
 
 %prep
