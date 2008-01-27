@@ -1,21 +1,19 @@
 Summary:	GnomeVFS module for accessing Windows CE and Pocket PC devices
 Summary(pl.UTF-8):	Moduł GnomeVFS służący do dostępu do urządzeń Windows CE i Pocket PC
 Name:		synce-gnomevfs
-Version:	0.9.0
-Release:	2
+Version:	0.11
+Release:	1
 License:	MIT
-Vendor:		The SynCE Project
 Group:		Applications/Communications
-Source0: 	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
-# Source0-md5:	1fa8d653297331479edcd5d983a0f75e
+Source0:	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
+# Source0-md5:	603eab9ba869c16345f8795b6d87312b
 URL:		http://www.synce.org/
 BuildRequires:	automake
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
-BuildRequires:	synce-librapi2-devel >= 0.9.0
-Requires:	synce-librapi2 >= 0.9.0
-ExcludeArch:	%{x8664} alpha ia64 ppc64 s390x sparc64
+BuildRequires:	synce-librapi2-devel >= %{version}
+Requires:	synce-librapi2 >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,7 +27,7 @@ Windows CE i Pocket PC. Jest on częścią projektu SynCE:
 <http://www.synce.org/>.
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 cp -f /usr/share/automake/config.* .
@@ -43,7 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-vfs-2.0/modules/*.la
+rm $RPM_BUILD_ROOT%{_libdir}/gnome-vfs-2.0/modules/*.la
+rm $RPM_BUILD_ROOT%{_libdir}/synce-trayicon/modules/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,10 +52,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog LICENSE README
 %attr(755,root,root) %{_bindir}/synce-in-computer-folder
 %attr(755,root,root) %{_libdir}/gnome-vfs-2.0/modules/libsyncevfs.so
+%attr(755,root,root) %{_libdir}/synce-trayicon/modules/gnomevfs-trayicon-module.so
 %{_sysconfdir}/gnome-vfs-2.0/modules/synce-module.conf
+%{_iconsdir}/hicolor/*/apps/synce-gnomevfs.png
 # dir shared with synce-rra, synce-software-manager, synce-trayicon
 %dir %{_datadir}/synce
-%{_datadir}/synce/synce-in-computer-folder.sh
-# dir shared with synce-trayicon
-%dir %{_pixmapsdir}/synce
-%{_pixmapsdir}/synce/synce-color.png
+%attr(755,root,root) %{_datadir}/synce/synce-in-computer-folder.sh
+%{_mandir}/man1/synce-in-computer-folder.1*
