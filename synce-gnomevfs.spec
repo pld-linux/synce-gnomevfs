@@ -1,19 +1,19 @@
 Summary:	GnomeVFS module for accessing Windows CE and Pocket PC devices
 Summary(pl.UTF-8):	Moduł GnomeVFS służący do dostępu do urządzeń Windows CE i Pocket PC
 Name:		synce-gnomevfs
-Version:	0.11
+Version:	0.11.1
 Release:	1
 License:	MIT
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
-# Source0-md5:	603eab9ba869c16345f8795b6d87312b
+# Source0-md5:	3f4d3134e9187ffe518353b59a2f9b40
 URL:		http://www.synce.org/
 BuildRequires:	automake
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	synce-librapi2-devel >= %{version}
-Requires:	synce-librapi2 >= %{version}
+%requires_eq_to	synce-librapi2 synce-librapi2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
