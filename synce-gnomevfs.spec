@@ -7,10 +7,10 @@ License:	MIT
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
 # Source0-md5:	b460273d980c6ce0289f0beca9484f78
+Patch0:		%{name}-no_cxx.patch
 URL:		http://www.synce.org/
 BuildRequires:	automake
 BuildRequires:	gnome-vfs2-devel >= 2.14.0
-BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	synce-librapi2-devel >= %{version}
@@ -29,6 +29,7 @@ Windows CE i Pocket PC. Jest on częścią projektu SynCE:
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 cp -f /usr/share/automake/config.* .
