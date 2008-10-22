@@ -9,7 +9,8 @@ Source0:	http://dl.sourceforge.net/synce/%{name}-%{version}.tar.gz
 # Source0-md5:	b460273d980c6ce0289f0beca9484f78
 URL:		http://www.synce.org/
 BuildRequires:	automake
-BuildRequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	gnome-vfs2-devel >= 2.14.0
+BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	synce-librapi2-devel >= %{version}
