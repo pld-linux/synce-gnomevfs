@@ -1,3 +1,4 @@
+# NOTE: deprecated in favour of synce-gvfs
 Summary:	GnomeVFS module for accessing Windows CE and Pocket PC devices
 Summary(pl.UTF-8):	Moduł GnomeVFS służący do dostępu do urządzeń Windows CE i Pocket PC
 Name:		synce-gnomevfs
@@ -43,8 +44,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm $RPM_BUILD_ROOT%{_libdir}/gnome-vfs-2.0/modules/*.la
-rm $RPM_BUILD_ROOT%{_libdir}/synce-trayicon/modules/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-vfs-2.0/modules/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/synce-trayicon/modules/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
